@@ -93,7 +93,18 @@ public class ClientCreateMessageGUI extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    	// Something we need to discuss, will we be keeping the current user ID in the server,
+    	// or will we pass it each time it is needed?
+    	String query = "fromID=" + "someone@something.com"; 
+    	query += "&"; 
+    	query += "toID=" + toField.getText();
+    	query += "&";
+    	query += "subject=" + subjectField.getText();
+    	query += "&";
+    	query += "message=" + messageField.getText();
+    	//Client client = new Client();
+    	//client.connect(query);
+    	System.out.println(query);
     }
 
     /**

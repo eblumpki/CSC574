@@ -106,11 +106,11 @@ public class ClientLogOnGUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {
     	String password = new String(passwordField.getPassword());
-    	String query = "UserID=" + emailField.getText(); 
+    	String query = "loginID=" + emailField.getText(); 
     	query += "&"; 
     	query += "password=" + password;
-    	Client client = new Client();
-    	client.connect(query);
+    	//Client client = new Client();
+    	//client.connect(query);
     	System.out.println(query);
     }
 

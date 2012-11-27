@@ -38,9 +38,19 @@ public class ClientCreateAccountGUI extends javax.swing.JFrame {
 
         buttonGroup.add(ncsuButton);
         ncsuButton.setText("@ncsu.edu");
+        ncsuButton.addActionListener(new java.awt.event.ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+        		ncsuButtonActionPerformed(evt);
+        	}
+        });
 
         buttonGroup.add(cscmailButton);
         cscmailButton.setText("@cscmail.com");
+        cscmailButton.addActionListener(new java.awt.event.ActionListener() {
+        	public void actionPerformed(java.awt.event.ActionEvent evt) {
+        		cscmailButtonActionPerformed(evt);
+        	}
+        });
 
         registerButton.setText("Register");
         registerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +121,32 @@ public class ClientCreateAccountGUI extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    	String password = new String(passwordField.getPassword());
+    	String password2 = new String(passwordReentryField.getPassword());
+    	if(!password.equals(password2)){
+    		System.out.println("Passwords do not match. Please try again.");
+    		return;
+    	}
+    	if(domain.equals("")){
+    		System.out.println("Please select a domain.");
+    		return;
+    	}
+    	String query = "newLoginID=" + usernameField.getText(); 
+    	query += "&"; 
+    	query += "domain=" + domain;
+    	query += "&";
+    	query += "password=" + password;
+    	//Client client = new Client();
+    	//client.connect(query);
+    	System.out.println(query);
+    }
+    
+    private void cscmailButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    	domain = "@cscmail.com";
+    }
+    
+    private void ncsuButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    	domain = "@ncsu.edu";
     }
 
     /**
@@ -148,6 +183,7 @@ public class ClientCreateAccountGUI extends javax.swing.JFrame {
             }
         });
     }
+    private String domain = "";
     // Variables declaration - do not modify
     private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JRadioButton cscmailButton;

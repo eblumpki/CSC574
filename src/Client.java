@@ -37,8 +37,8 @@ public class Client {
 				connection.setRequestProperty("Cookie", cuki); 
 			}
 	 
-			//connection.setRequestMethod("POST"); 
-			//HttpURLConnection.setFollowRedirects(true);  
+			connection.setRequestMethod("POST"); 
+			HttpURLConnection.setFollowRedirects(true);  
 	//connection.setRequestProperty("Accept-Language","it"); 
 	//connection.setRequestProperty("Accept", "application/cfm, image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, //*/*"); 
 	//connection.setRequestProperty("Accept-Encoding","gzip"); 
