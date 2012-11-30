@@ -1,4 +1,0 @@
-CSC574
-======
-
-NetSecProject
